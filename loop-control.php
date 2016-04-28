@@ -1,22 +1,23 @@
 <?php
 $numbers = range(0, 100, 3);
-while (list($key, $number) = each ($numbers)){
-    if($number > 0 ){
-        if ($number % 7 === 0) {
-            echo("Sevens are lucky, this number has ". ($number / 7) . "\n");
+do {
+    if($numbers[0] > 0 ){
+        if ($numbers[0] % 7 === 0) {
+            echo("Sevens are lucky, this number has ". ($numbers[0] / 7) . "\n");
 
-            if ($number === (3*7)){
+            if ($numbers[0] === (3*7)){
                 echo "First Number\n";
-            } elseif ($number === (intdiv(100,3*7)*3*7)) {
+            } elseif ($numbers[0] === (intdiv(100,3*7)*3*7)) {
                 echo "Last Number\n";
             }
-        } elseif ($number % 10 === 0) {
-            echo("$number is a round number\n");
-            if ($number === (3 * 10)) {
+        } elseif ($numbers[0] % 10 === 0) {
+            echo("$numbers[0] is a round number\n");
+            if ($numbers[0] === (3 * 10)) {
                 echo "First Number\n";
-            } elseif ($number === (intdiv(100,3*10)*3*10)) {
+            } elseif ($numbers[0] === (intdiv(100,3*10)*3*10)) {
                 echo "Last Number\n";
             }
         }
     }
-}
+    array_shift($numbers);
+} while (!empty($numbers));
