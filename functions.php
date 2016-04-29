@@ -16,6 +16,11 @@ function divide(&$dividend, &$divisor){
     return (is_numeric($dividend) and is_numeric($divisor) and $divisor != 0) ? $dividend / $divisor : null;
 }
 
+function compare($x, $y, $isSameType = false){
+    return ($isSameType) ? $x === $y : $x == $y;
+}
+
+
 $operator1 = 10;
 $operator2 = 2;
 
