@@ -25,3 +25,8 @@ $operator1 = 10;
 $operator2 = 2;
 
 echo "($operator1 / $operator2 +(($operator1 * $operator2)- $operator2)) = " . add(divide($operator1,$operator2),subtract(multiply($operator1,$operator2),$operator2)) . "\n";
+
+printf("4 = \"4\" : %s\n", ((compare(4, "4")) ? 'true' : 'false'));
+printf("5 = \"5\" : %s\n", ((compare(5, "5", true)) ? 'true' : 'false'));
+printf("4 = 4.0 : %s\n", ((compare(4, 4.0)) ? 'true' : 'false'));
+printf("5 = 5.0 : %s\n", ((compare(5, 5.0, true)) ? 'true' : 'false'));
