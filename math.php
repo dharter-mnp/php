@@ -8,20 +8,35 @@
  */
 class math
 {
-    public function add(&$augend, &$addend){
-        return (is_numeric($augend) and is_numeric($addend))? ($augend + $addend) : null;
+    public function add($augend, $addend, ...$values){
+        $result = $augend + $addend;
+        foreach ($values as $value) {
+            $result += $value;
+        }
+        return $result;
     }
 
-    public function subtract(&$minuend, &$subtrahend){
-        return (is_numeric($minuend) and is_numeric($subtrahend)) ? $minuend - $subtrahend : null;
+    public function subtract($minuend, $subtrahend, ...$values){
+        $result = $minuend - $subtrahend;
+        foreach ($values as $value) {
+            $result -= $value;
+        }
+        return $result;
     }
 
-    public function multiply(&$multiplicand, &$multiplier){
-        return (is_numeric($multiplicand) and is_numeric($multiplier)) ? $multiplicand * $multiplier : null;
+    public function multiply($multiplicand, $multiplier, ...$values){
+        $result = (int)$multiplicand * (int)$multiplier;
+        foreach ($values as $value) {
+            $result *= (int)$value;
+        }
+        return$result;
     }
 
-    public function divide(&$dividend, &$divisor){
-        return (is_numeric($dividend) and is_numeric($divisor) and $divisor != 0) ? $dividend / $divisor : null;
+    public function divide($dividend, $divisor, ...$values){
+        $result = $dividend / $divisor;
+        foreach ($values as $value) {
+            $result /= $value;
+        }
+        return $result;
     }
-
 }
