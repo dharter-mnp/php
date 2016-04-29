@@ -16,3 +16,7 @@ function divide($dividend, $divisor){
     return (is_numeric($dividend) and is_numeric($divisor) and $divisor != 0) ? $dividend / $divisor : null;
 }
 
+$operator1 = 10;
+$operator2 = 2;
+
+echo "($operator1 / $operator2 +(($operator1 * $operator2)- $operator2)) = " . add(divide($operator1,$operator2),subtract(multiply($operator1,$operator2),$operator2)) . "\n";
