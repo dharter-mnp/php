@@ -8,6 +8,24 @@ require_once ("Workstation.php");
  */
 class PC extends Workstation
 {
-    
+    private $servicePack;
+
+    /**
+     * @return mixed
+     */
+    public function getServicePack()
+    {
+        return $this->servicePack;
+    }
+
+    /**
+     * @param mixed $servicePack
+     */
+    public function setServicePack($servicePack)
+    {
+        $this->servicePack = $servicePack;
+    }
+
+
 
 }
