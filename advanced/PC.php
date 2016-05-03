@@ -1,4 +1,5 @@
 <?php
+namespace advanced;
 require_once ("Workstation.php");
 /**
  * Created by PhpStorm.

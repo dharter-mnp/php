@@ -1,4 +1,5 @@
 <?php
+namespace advanced;
 require_once ("Computer.php");
 /**
  * Created by PhpStorm.

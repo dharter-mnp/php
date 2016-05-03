@@ -1,6 +1,11 @@
 <?php
 require_once ("DatabaseServer.php");
 require_once ("WebServer.php");
+
+use advanced\DatabaseServer as DBS;
+use advanced\Server;
+use advanced\WebServer as WS;
+
 /**
  * Created by PhpStorm.
  * User: DHarter
@@ -15,10 +20,10 @@ require_once ("WebServer.php");
 
     echo "\n";
 
-    $dbServer = new DatabaseServer('My Database Server', 'Linux', '2.6', 'Carrolton', 'PosgreSQL', '9.5');
+    $dbServer = new DBS('My Database Server', 'Linux', '2.6', 'Carrolton', 'PosgreSQL', '9.5');
     $dbServer->getServerInfo();
 
     echo "\n";
 
-    $webServer = new WebServer('Tomcat', '7.0.69');
+    $webServer = new WS('Tomcat', '7.0.69');
     $webServer->getServerInfo();

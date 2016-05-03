@@ -1,4 +1,5 @@
 <?php
+namespace advanced;
 require_once ("Server.php");
 /**
  * Created by PhpStorm.

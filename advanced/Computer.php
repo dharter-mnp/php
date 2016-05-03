@@ -1,5 +1,5 @@
 <?php
-
+namespace advanced;
 /**
  * Created by PhpStorm.
  * User: DHarter
