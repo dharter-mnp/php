@@ -46,11 +46,11 @@ class Server extends Computer
     }
 
     protected function isDatabaseServer(){
-        if ($this->getServerType() === "database"){
-            echo "This is a database server\n";
-        } else {
-            echo "This is not a database server\n";
-        }
+        $type = $this->getServerType();
+        $isDBServer = function() use ($type) {
+            echo ($type === "database") ? "This is a database server\n" : "This is not a database server\n";
+        };
+        $isDBServer();
     }
 
     public function getServerInfo(){

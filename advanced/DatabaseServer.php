@@ -69,7 +69,10 @@ class DatabaseServer extends Server
     public function getServerInfo(){
         /*Overwriting parent functionality but execute parent first*/
         parent::getServerInfo();
-        echo "Database Server: $this->databaseServer\n";
-        echo "Database Server Version: $this->databaseServerVersion\n";
+        $self = $this;
+        $simpleClosure = function() use($self ) {
+            return "Database Server and Version: $self->databaseServer $self->databaseServerVersion\n";
+        };
+        echo $simpleClosure();
     }
 }

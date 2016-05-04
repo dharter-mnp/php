@@ -12,20 +12,7 @@ use advanced\WebServer as WS;
  * Date: 5/3/2016
  * Time: 2:23 PM
  */
-    $server = new Server();
-    $server->computerName = 'My Server';
-    $server->setLocation('Home');
-    $server->setServerType('database');  
-    $server->getServerInfo();
-    $server->shared();
+    $servers = [new Server(), new DBS('My Database Server', 'Linux', '2.6', 'Carrolton', 'PosgreSQL', '9.5'), new WS('Tomcat', '7.0.69')];
 
-    echo "\n";
+    array_walk($servers, function($server){ $server->getServerInfo();echo "\n";});
 
-    $dbServer = new DBS('My Database Server', 'Linux', '2.6', 'Carrolton', 'PosgreSQL', '9.5');
-    $dbServer->getServerInfo();
-    $server->shared();
-
-    echo "\n";
-
-    $webServer = new WS('Tomcat', '7.0.69');
-    $webServer->getServerInfo();
