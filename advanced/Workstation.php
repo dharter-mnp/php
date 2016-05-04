@@ -7,7 +7,7 @@ require_once ("Computer.php");
  * Date: 4/29/2016
  * Time: 4:32 PM
  */
-class Workstation
+class Workstation extends Computer
 {
     private $diskSize;
     private $ram;
