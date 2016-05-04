@@ -53,8 +53,7 @@ class Server extends Computer
 
     public function getServerInfo(){
         echo "Computer Name: $this->computerName\n";
-        echo "Operating System: " . $this->getOperatingSystem() . "\n";
-        echo "Operating System Version: " . $this->getOperatingSystemVersion() . "\n";
+        echo "Operating System and Version: " . $this->getOperatingSystemAndVersion() . "\n";
         echo "Location: " . $this->getLocation() . "\n";
         echo "Server Type: " . $this->getServerType() . "\n";
         $this->isDatabaseServer();

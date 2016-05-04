@@ -1,16 +1,31 @@
 <?php
 namespace advanced;
+require_once ("CompanyDefaultsInterface.php");
 /**
  * Created by PhpStorm.
  * User: DHarter
  * Date: 4/29/2016
  * Time: 4:31 PM
  */
-class Computer
+class Computer implements CompanyDefaultsInterface
 {
     public $computerName;
     private $operatingSystem;
     protected $operatingSystemVersion;
+
+    /**
+     * Computer constructor.
+     * @param $computerName
+     * @param $operatingSystem
+     * @param $operatingSystemVersion
+     */
+    public function __construct($computerName = null, $operatingSystem = self::DefaultOperatingSystem, $operatingSystemVersion = null)
+    {
+        $this->computerName = $computerName;
+        $this->operatingSystem = $operatingSystem;
+        $this->operatingSystemVersion = $operatingSystemVersion;
+    }
+
     /**
      * @return mixed
      */
@@ -38,7 +53,7 @@ class Computer
     /**
      * @param mixed $operatingSystem
      */
-    public function setOperatingSystem($operatingSystem)
+    public function setOperatingSystem($operatingSystem = self::DefaultOperatingSystem)
     {
         $this->operatingSystem = $operatingSystem;
     }
@@ -60,4 +75,8 @@ class Computer
     }
 
 
+    public function getOperatingSystemAndVersion()
+    {
+        return "$this->operatingSystem $this->operatingSystemVersion";
+    }
 }
