@@ -68,5 +68,6 @@ class WebServer extends Server
         $this->isDatabaseServer();
         echo "Web Server: $this->webServer\n";
         echo "Web Server Version: $this->webServerVersion\n";
+        $this->shared();
     }
 }

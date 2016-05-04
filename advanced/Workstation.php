@@ -1,6 +1,7 @@
 <?php
 namespace advanced;
 require_once ("Computer.php");
+require_once ("SharedTrait.php");
 /**
  * Created by PhpStorm.
  * User: DHarter
@@ -9,6 +10,7 @@ require_once ("Computer.php");
  */
 class Workstation extends Computer
 {
+    use SharedTrait;
     private $diskSize;
     private $ram;
     private $user;

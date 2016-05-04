@@ -12,4 +12,7 @@ namespace advanced;
 trait SharedTrait
 {
 
+    public function shared(){
+        echo "This trait is shared\n";
+    }
 }

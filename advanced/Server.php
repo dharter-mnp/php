@@ -1,6 +1,7 @@
 <?php
 namespace advanced;
 require_once ("Computer.php");
+require_once ("SharedTrait.php");
 /**
  * Created by PhpStorm.
  * User: DHarter
@@ -9,6 +10,7 @@ require_once ("Computer.php");
  */
 class Server extends Computer
 {
+    use SharedTrait;
     private $location;
     protected $serverType;
 
@@ -57,6 +59,7 @@ class Server extends Computer
         echo "Location: " . $this->getLocation() . "\n";
         echo "Server Type: " . $this->getServerType() . "\n";
         $this->isDatabaseServer();
+
     }
 
 }

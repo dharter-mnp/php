@@ -17,11 +17,13 @@ use advanced\WebServer as WS;
     $server->setLocation('Home');
     $server->setServerType('database');  
     $server->getServerInfo();
+    $server->shared();
 
     echo "\n";
 
     $dbServer = new DBS('My Database Server', 'Linux', '2.6', 'Carrolton', 'PosgreSQL', '9.5');
     $dbServer->getServerInfo();
+    $server->shared();
 
     echo "\n";
 
